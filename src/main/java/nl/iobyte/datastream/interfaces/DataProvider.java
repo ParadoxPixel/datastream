@@ -2,7 +2,7 @@ package nl.iobyte.datastream.interfaces;
 
 import java.util.List;
 
-public interface DataStreamProvider<T> {
+public interface DataProvider<T> {
 
     /**
      * Get page index with size

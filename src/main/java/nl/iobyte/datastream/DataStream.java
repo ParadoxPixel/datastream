@@ -1,7 +1,7 @@
 package nl.iobyte.datastream;
 
 import nl.iobyte.datastream.interfaces.IExecutor;
-import nl.iobyte.datastream.interfaces.DataStreamProvider;
+import nl.iobyte.datastream.interfaces.DataProvider;
 import java.util.ArrayDeque;
 import java.util.Iterator;
 import java.util.List;
@@ -20,12 +20,12 @@ public class DataStream<T> {
     private final ArrayDeque<T> queue;
 
     //Parameters
-    private final DataStreamProvider<T> provider;
+    private final DataProvider<T> provider;
     private final IExecutor executor;
     private final int size, min;
     private int page;
 
-    public DataStream(DataStreamProvider<T> provider, IExecutor executor, int size, int min) {
+    public DataStream(DataProvider<T> provider, IExecutor executor, int size, int min) {
         if(size <= min)
             throw new IllegalArgumentException("size should be bigger than minimum size");
 
